@@ -160,5 +160,5 @@ function convertToRustHeaders(options?: { headers?: HeadersInit }) {
   }
 }
 
-export type { CheckOptions, DownloadOptions, DownloadEvent }
+export type { CheckOptions, DownloadOptions, DownloadEvent, InstallOptions }
 export { check, Update }

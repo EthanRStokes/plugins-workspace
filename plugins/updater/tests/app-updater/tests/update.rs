@@ -394,7 +394,10 @@ fn update_app() {
             config.version = "0.1.0";
 
             // bundle initial app version
+            #[cfg(windows)]
             build_app(&manifest_dir, &config, None);
+            #[cfg(not(windows))]
+            build_app(&manifest_dir, &config, Some(bundle_target));
 
             for expected_exit_code in status_checks {
                 let mut binary_cmd = if cfg!(windows) {
